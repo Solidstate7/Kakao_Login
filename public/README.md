@@ -1,0 +1,1 @@
+# No Static Assets Provided

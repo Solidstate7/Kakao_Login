@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kakao Login</title>
+    </head>
+    <body>
+        <a href="/auth/kakao/login">카카오 로그인</a>
+        {% if id %}
+        <span>이름: {{nickname}}</span>
+        <img src="{{pfp_link}}" alt="" />
+        <img src="{{pfpthumb_link}}" alt="" />
+        {% endif %}
+    </body>
+</html>
