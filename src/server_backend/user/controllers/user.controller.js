@@ -1,7 +1,7 @@
 const {
     ORM: { KakaoUser },
     JWT: { jwt, SALT },
-} = require("../../lib");
+} = require("../../lib/index");
 
 exports.provideToken = async (req, res, next) => {
     try {

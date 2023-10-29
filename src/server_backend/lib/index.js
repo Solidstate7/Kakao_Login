@@ -9,9 +9,18 @@ const {
     DB_DIALECT,
     SALT,
 } = process.env;
+// DB object
+const DB = {
+    database: DB_DATABASE,
+    host: DB_HOST,
+    port: DB_PORT,
+    username: DB_USERNAME,
+    password: DB_PASSWORD,
+    dialect: DB_DIALECT,
+};
 // sequelize setup
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(database, username, password, db);
+const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, DB);
 // specify the model
 require("../user/models/user.model")(sequelize, Sequelize.DataTypes);
 const { KakaoUser } = sequelize.models;
@@ -23,14 +32,6 @@ const BaseDTO = require("./classes/dto");
 const HttpException = require("./classes/exception");
 
 module.exports = {
-    DB: {
-        database: DB_DATABASE,
-        host: DB_HOST,
-        port: DB_PORT,
-        username: DB_USERNAME,
-        password: DB_PASSWORD,
-        dialect: DB_DIALECT,
-    },
     ORM: {
         sequelize,
         KakaoUser,
