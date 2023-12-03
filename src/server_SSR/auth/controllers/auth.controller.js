@@ -32,6 +32,15 @@ exports.loginKakao = (req, res, next) => {
     }
 };
 
+exports.logout = (req, res, next) => {
+    try {
+        res.clearCookie("token");
+        res.redirect("/");
+    } catch (e) {
+        next(e);
+    }
+};
+
 exports.callbackKakao = async (req, res, next) => {
     try {
         const { code } = req.query;
