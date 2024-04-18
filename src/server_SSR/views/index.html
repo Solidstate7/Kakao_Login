@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kakao Login</title>
-    </head>
-    <body>
-        {% if id %}
-        <span>이름: {{nickname}}</span>
-        <img src="{{pfp_link}}" alt="" />
-        <img src="{{pfpthumb_link}}" alt="" />
-        <a href="/auth/logout">로그아웃</a>
-        {% else %}
-        <a href="/auth/kakao/login">카카오 로그인</a>
-        {% endif %}
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kakao Login</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    "
+  >
+    {% if id %}
+    <div style="text-align: center">
+      <span style="display: block; font-size: 1.2em; margin-bottom: 20px"
+        >이름: {{nickname}}</span
+      >
+      <img
+        src="{{pfpthumb_link}}"
+        alt=""
+        style="
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin-bottom: 20px;
+        "
+      />
+      <a
+        href="/auth/logout"
+        style="
+          font-size: 1em;
+          color: white;
+          background-color: #f7e600;
+          padding: 10px 20px;
+          text-decoration: none;
+          border-radius: 5px;
+        "
+        >로그아웃</a
+      >
+    </div>
+    {% else %}
+    <a
+      href="/auth/kakao/login"
+      style="
+        font-size: 1.2em;
+        color: white;
+        background-color: #fee500;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+      "
+      >카카오 로그인</a
+    >
+    {% endif %}
+  </body>
 </html>
